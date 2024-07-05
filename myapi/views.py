@@ -4,8 +4,8 @@ from django.http import JsonResponse, request
 def basic_api(request):
   if request.method == 'GET':
         visitor_ip = request.META.get('REMOTE_ADDR')
-        visitor_name = request.GET.get('visitor_name')
-        username = request.GET.get('username', None) 
+        visitor_name = request.GET.get('visitor_name', 'Mark')
+        #username = request.GET.get('username', None) 
         Location = "New York"
 
         #payload = {'ip': visitor_ip, 'format': 'json'}
