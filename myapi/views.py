@@ -8,7 +8,7 @@ def basic_api(request):
         #Location = "New York"
 
         payload = {'ip': visitor_ip, 'format': 'json'}
-        api_result =  request.get('https://api.ip2location.io/', params=payload)
+        api_result =  request.GET.get('https://api.ip2location.io/', params=payload)
         Location = api_result.json()
    
         cityName = Location['city_name']
