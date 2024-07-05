@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, request
 
 def basic_api(request):
   if request.method == 'GET':
