@@ -5,6 +5,8 @@ def basic_api(request):
   if request.method == 'GET':
         visitor_ip = request.META.get('REMOTE_ADDR')
         visitor_name = request.GET.get('visitor_name', 'Mark')
+        if not visitor_name:
+          return JsonResponse({'error': 'Missing visitor_name parameter'}, status=400)
         #username = request.GET.get('username', None) 
         Location = "New York"
 
