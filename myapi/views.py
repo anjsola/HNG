@@ -5,10 +5,11 @@ def basic_api(request):
   if request.method == 'GET':
         visitor_ip = request.META.get('REMOTE_ADDR')
         visitor_name = request.GET.get('visitor_name', 'Mark')
+        username = request.GET.get('username', None) 
         #Location = "New York"
 
         #payload = {'ip': visitor_ip, 'format': 'json'}
-        api_result =  request.GET.get('https://api.ip2location.io/', params='')
+        api_result =  request.GET.get('https://api.ip2location.io/', None)
         Location = api_result.json()
    
         cityName = Location['city_name']
